@@ -1,7 +1,12 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from tensorflow.keras.models import load_model
+
+# Safe import for load_model
+try:
+    from tensorflow.keras.models import load_model
+except ImportError:
+    from keras.models import load_model
 
 st.set_page_config(page_title="Quotex Pattern Predictor", layout="centered")
 
